@@ -1,14 +1,17 @@
-<section>
-    <object type="image/svg+xml" data="media/logo.svg" id="svg-logo"></object>
-    <article>
+<main>
+    <h2>nuntius game</h2>
+    <?php
+    include("media/logo.svg")
+    ?>
+    <form method="POST" action="">
         <p>
             pseudo
         </p>
-        <span><input></span>
+        <input name="pseudo">
         <p>mots de passe</p>
-        <span><input></span>
-        <input type="submit" value="s'inscrire">
-        <input type="submit" value="se connecter">
-        <input type="submit" value="Mots de passe oubier">
-    </article>
-</section>
+        <input name="password">
+        <input type="submit" class="borderyellow" value="s'inscrire">
+        <input type="submit" class="backgroundyellow" value="se connecter">
+        <input type="submit" class="borderwhite" value="Mots de passe oubier">
+    </form>
+</main>

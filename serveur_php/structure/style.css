@@ -1,3 +1,61 @@
 * {
     background-color: #1A1C22;
+    color: white;
+    text-align: center;
+    justify-content: center;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+path {
+    fill: white;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    grid-column: span 2;
+    height: 61.21px;
+    background-color: white;
+}
+
+p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    grid-column: span 2;
+}
+
+.borderyellow {
+    grid-column: span 1;
+    border: 3px solid #FCED8A;
+    background-color: transparent;
+    margin-right: 10px;
+}
+
+.backgroundyellow {
+    grid-column: span 1;
+    background-color: #FCED8A;
+    color: black;
+    margin-left: 10px;
+}
+
+.borderwhite {
+    border: 3px white solid;
+    background-color: transparent;
 }
