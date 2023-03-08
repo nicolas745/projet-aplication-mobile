@@ -9,9 +9,9 @@
         </p>
         <input name="pseudo">
         <p>mots de passe</p>
-        <input name="password">
-        <input type="submit" class="borderyellow" value="s'inscrire">
-        <input type="submit" class="backgroundyellow" value="se connecter">
-        <input type="submit" class="borderwhite" value="Mots de passe oubier">
+        <input type="password" name="password">
+        <input type="submit" class="borderyellow" name="inscription" value="s'inscrire">
+        <input type="submit" class="backgroundyellow" name="connection" value="se connecter">
+        <input type="submit" class="borderwhite" name="pass" value="Mots de passe oubier">
     </form>
 </main>

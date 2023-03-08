@@ -6,7 +6,7 @@ function my_autoloader($class)
         include $filename;
     }
 }
-
+session_start();
 spl_autoload_register('my_autoloader');
 include("structure/header.php");
 new main();

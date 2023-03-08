@@ -6,9 +6,12 @@
 }
 
 body {
+    width: 100%;
+    padding: 10px;
     height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: end;
+    margin: 0px;
 }
 
 path {
@@ -18,7 +21,9 @@ path {
 main {
     display: flex;
     flex-wrap: wrap;
-    margin: 20px;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
 form {
@@ -28,11 +33,21 @@ form {
 }
 
 input {
+    color: black;
     margin-top: 10px;
     margin-bottom: 10px;
     grid-column: span 2;
     height: 61.21px;
     background-color: white;
+}
+
+div {
+    width: 100%;
+    display: flex;
+}
+
+div input {
+    height: 20px;
 }
 
 p {
@@ -48,6 +63,12 @@ p {
     margin-right: 10px;
 }
 
+section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 .backgroundyellow {
     grid-column: span 1;
     background-color: #FCED8A;
@@ -58,4 +79,20 @@ p {
 .borderwhite {
     border: 3px white solid;
     background-color: transparent;
+}
+
+svg {
+    height: 61px;
+    fill: white;
+}
+
+nav a.svgYellow * {
+    fill: #FCED8A;
+}
+
+nav {
+    width: 100%;
+    height: max-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
