@@ -7,7 +7,7 @@
 
 body {
     width: 100%;
-    padding: 10px;
+    padding: 0px;
     height: 100vh;
     display: flex;
     align-items: end;
@@ -22,8 +22,8 @@ main {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    width: 90%;
     height: 100%;
-    width: 100%;
 }
 
 form {
@@ -36,24 +36,15 @@ input {
     color: black;
     margin-top: 10px;
     margin-bottom: 10px;
-    grid-column: span 2;
+    grid-column: 1 / -1;
     height: 61.21px;
     background-color: white;
-}
-
-div {
-    width: 100%;
-    display: flex;
-}
-
-div input {
-    height: 20px;
 }
 
 p {
     margin-top: 10px;
     margin-bottom: 10px;
-    grid-column: span 2;
+    grid-column: 1 / -1;
 }
 
 .borderyellow {
@@ -61,12 +52,6 @@ p {
     border: 3px solid #FCED8A;
     background-color: transparent;
     margin-right: 10px;
-}
-
-section {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
 }
 
 .backgroundyellow {
@@ -88,6 +73,21 @@ svg {
 
 nav a.svgYellow * {
     fill: #FCED8A;
+}
+
+section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+svg,
+section input[type="radio"] {
+    grid-column: span 1;
+}
+
+input[type="radio"] {
+    height: 20px;
 }
 
 nav {
