@@ -1,5 +1,5 @@
 <h2>Platforme</h2>
-<input>
+<?php new input(input::search, "search"); ?>
 <ul>
     <?php
     for ($i = 0; $i < 5 && $i < count($listPlatforme); $i++) {

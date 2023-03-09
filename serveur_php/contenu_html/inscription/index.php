@@ -4,13 +4,15 @@
     $files = scandir($dir);
     function buttons($nb)
     {
+        echo "<article>";
         for ($i = 0; $i < $nb; $i++) {
-            echo "<button class='page$i'>$i</button>";
+            echo "<button class='page$i select'>$i</button>";
         }
+        echo "</article>";
     }
     foreach ($files as $file) {
         if ($file !== '.' && $file !== '..' && $file !== 'index.php') {
-            echo '<section>';
+            echo '<section class="inscription">';
             include("$dir/$file");
             buttons(count($files) - 3);
             echo "</section>";

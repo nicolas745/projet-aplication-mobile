@@ -1,7 +1,7 @@
 <p>pseudo : </p>
-<input>
+<?php new input(input::user, "text"); ?>
 <p>mots de passe : </p>
-<input type="password">
+<?php new input(input::eye_slash, "password"); ?>
 <p>Sex :</p>
 <?php
 foreach ($listSex as $data) {
@@ -10,5 +10,5 @@ foreach ($listSex as $data) {
 }
 ?>
 <p>E-mail</p>
-<input type="mail">
+<?php new input(input::email, "email"); ?>
 <button class="Suivent">Suivent</button>

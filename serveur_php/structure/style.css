@@ -3,6 +3,20 @@
     color: white;
     text-align: center;
     justify-content: center;
+    font-size: 20px;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+h1 {
+    font-size: 40px;
+    width: 100%;
+}
+
+#Logo {
+    height: 195px;
+    width: 281px;
 }
 
 body {
@@ -32,7 +46,42 @@ form {
     grid-template-columns: 1fr 1fr;
 }
 
+.champ {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    grid-column: 1 / -1;
+}
+
+.consdition * {
+    background-color: white;
+    color: black;
+}
+
+.consdition {
+    background-color: white;
+    color: black;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.champ svg * {
+    fill: black;
+}
+
+.champ svg {
+    position: absolute;
+    height: 61.21px;
+    width: 61.21px;
+    right: 5%;
+}
+
+.champ input {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 input {
+
     color: black;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -52,6 +101,7 @@ p {
     border: 3px solid #FCED8A;
     background-color: transparent;
     margin-right: 10px;
+    color: #FCED8A;
 }
 
 .backgroundyellow {
@@ -64,20 +114,38 @@ p {
 .borderwhite {
     border: 3px white solid;
     background-color: transparent;
+    color: white;
+}
+
+article,
+button {
+    grid-column: 1 / -1;
+    height: 61px;
+}
+
+button.select {
+    height: 20px;
+    width: 20px;
 }
 
 svg {
     height: 61px;
     fill: white;
+    background: none;
 }
 
 nav a.svgYellow * {
     fill: #FCED8A;
 }
 
+form section {
+    grid-column: 1 / -1;
+}
+
 section {
     width: 100%;
     display: grid;
+
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 

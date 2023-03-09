@@ -5,7 +5,7 @@ class connection
     private string $password;
     public function __construct()
     {
-        if (isset($_POST['inscription']) || true) {
+        if (isset($_POST['inscription'])) {
             $sql_sex = new sql_sex();
             $listSex = $sql_sex->getList();
             $sql_platforme = new sql_platforme();

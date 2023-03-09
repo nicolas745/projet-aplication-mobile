@@ -1,5 +1,5 @@
 <h2>condition de utilisation </h2>
-<article>
+<article class="consdition">
     <h3>Conditions d'utilisation pour le site de rencontre de jeux vidéo</h3>
 
     <h4>Introduction</h4>
