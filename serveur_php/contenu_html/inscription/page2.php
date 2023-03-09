@@ -1,7 +1,13 @@
-<p>Platforme</p>
+<h2>Platforme</h2>
+<input>
 <ul>
     <?php
-    $platforme = new sql_platforme();
+    for ($i = 0; $i < 5 && $i < count($listPlatforme); $i++) {
+        echo "<li>";
+        echo "<input>";
+        echo "<p>" . $listPlatforme[$i]['nom'] . "</p>";
+        echo "</li>";
+    }
     ?>
 </ul>
-<button></button>
+<button>Suivent</button>

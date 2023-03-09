@@ -4,7 +4,6 @@ class main
     public function __construct()
     {
         if ($this->isconnect()) {
-
             include("contenu_html/nav.php");
         } else {
             new connection();

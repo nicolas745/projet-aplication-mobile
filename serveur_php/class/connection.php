@@ -6,6 +6,12 @@ class connection
     public function __construct()
     {
         if (isset($_POST['inscription']) || true) {
+            $sql_sex = new sql_sex();
+            $listSex = $sql_sex->getList();
+            $sql_platforme = new sql_platforme();
+            $listPlatforme = $sql_platforme->getList();
+            $sql_jeux = new sql_jeux();
+            $listjeux = $sql_jeux->getList();
             include("contenu_html/inscription/index.php");
             exit();
         }

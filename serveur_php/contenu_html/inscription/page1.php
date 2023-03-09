@@ -1,14 +1,14 @@
 <p>pseudo : </p>
 <input>
 <p>mots de passe : </p>
-<input>
+<input type="password">
 <p>Sex :</p>
-<input type="radio" name="sexe" value="garcon">
-<?php include("media/garcon.svg"); ?>
-<input type="radio" name="sexe" value="fille">
-<?php include("media/fille.svg"); ?>
-<input name="sexe" value="nobinaire" type="radio">
-<?php include("media/nonbinaire.svg"); ?>
+<?php
+foreach ($listSex as $data) {
+    echo '<input type="radio" name="sexe" value="' . $data['id'] . '">';
+    include("media/" . $data['url']);
+}
+?>
 <p>E-mail</p>
-<input>
+<input type="mail">
 <button class="Suivent">Suivent</button>
