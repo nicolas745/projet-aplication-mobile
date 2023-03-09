@@ -5,11 +5,11 @@
     ?>
     <form method="POST" action="">
         <p>pseudo</p>
-        <?php new input(input::user, "text"); ?>
+        <?php new input(input::user, "text", "pseudo"); ?>
         <p>mots de passe</p>
-        <?php new input(input::eye_slash, "password"); ?>
-        <input type="submit" class="borderyellow" name="inscription" value="s'inscrire">
-        <input type="submit" class="backgroundyellow" name="connection" value="se connecter">
-        <input type="submit" class="borderwhite" name="pass" value="Mots de passe oubier">
+        <?php new input(input::eye_slash, "password", "password"); ?>
+        <a type="submit" class="borderyellow" href="?inscription">s'inscrire</a>
+        <input type="submit" class="backgroundyellow" name="connection" value="connection">
+        <a type="submit" class="borderwhite" name="pass" value="">Mots de passe oubier</a>
     </form>
 </main>

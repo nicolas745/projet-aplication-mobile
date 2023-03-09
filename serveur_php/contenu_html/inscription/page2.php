@@ -1,5 +1,5 @@
 <h2>Platforme</h2>
-<?php new input(input::search, "search"); ?>
+<?php new input(input::search, "search", "searchplatforme"); ?>
 <ul>
     <?php
     for ($i = 0; $i < 5 && $i < count($listPlatforme); $i++) {
@@ -10,4 +10,4 @@
     }
     ?>
 </ul>
-<button>Suivent</button>
+<button>Suivant</button>

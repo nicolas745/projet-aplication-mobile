@@ -1,5 +1,5 @@
 <?php
-class sql_conection extends sql
+class sql_conection extends sql_user
 {
     public string $pseudo;
     public string $password;

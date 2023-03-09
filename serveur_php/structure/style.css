@@ -101,13 +101,31 @@ p {
     border: 3px solid #FCED8A;
     background-color: transparent;
     margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 61.21px;
     color: #FCED8A;
+    display: flex;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.select {
+    margin: 10px;
+    border-radius: 100%;
+    background-color: #D9D9D9;
 }
 
 .backgroundyellow {
     grid-column: span 1;
     background-color: #FCED8A;
     color: black;
+    height: 61.21px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     margin-left: 10px;
 }
 
@@ -115,6 +133,12 @@ p {
     border: 3px white solid;
     background-color: transparent;
     color: white;
+    grid-column: 1 / -1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 61.21px;
+    display: flex;
+    align-items: center;
 }
 
 article,

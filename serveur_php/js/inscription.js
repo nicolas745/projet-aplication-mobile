@@ -1,4 +1,5 @@
 for (let i = 0; i < document.getElementsByClassName("inscription").length; i++) {
+    document.getElementsByClassName("select")[i * (document.getElementsByClassName("inscription").length + 1)].style.backgroundColor = "#FCED8A";
     if (i !== 0) {
         document.getElementsByClassName("inscription")[i].style.display = "none"
     }

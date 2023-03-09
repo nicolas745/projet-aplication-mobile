@@ -5,7 +5,7 @@ class connection
     private string $password;
     public function __construct()
     {
-        if (isset($_POST['inscription'])) {
+        if (isset($_GET['inscription'])) {
             $sql_sex = new sql_sex();
             $listSex = $sql_sex->getList();
             $sql_platforme = new sql_platforme();
@@ -32,7 +32,7 @@ class connection
     {
         if (!isset($_POST['pseudo']) || empty($_POST['pseudo'])) return false;
         if (!isset($_POST['password']) || empty($_POST['password'])) return false;
-        if (!isset($_POST['connection']) || empty($_POST['connection'])) return false;
+        if (!isset($_POST['connection'])) return false;
         $this->pseudo = $_POST['pseudo'];
         $this->password = $_POST['password'];
         return true;

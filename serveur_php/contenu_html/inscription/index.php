@@ -6,7 +6,7 @@
     {
         echo "<article>";
         for ($i = 0; $i < $nb; $i++) {
-            echo "<button class='page$i select'>$i</button>";
+            echo "<button class='page$i select'></button>";
         }
         echo "</article>";
     }

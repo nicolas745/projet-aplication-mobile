@@ -1,7 +1,7 @@
 <?php
 $buttons = array(
     "contact" => "media/contact.svg",
-    "messages" => "media/messages-dots.svg",
+    "messages" => "media/message.svg",
     "rechecher" => "media/search.svg",
     "config" => "media/settings.svg"
 );

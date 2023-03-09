@@ -1,5 +1,5 @@
 <h2>like</h2>
-<?php new input(input::search, "search"); ?>
+<?php new input(input::search, "search", "seachjeux"); ?>
 <ul class="jeux">
     <?php
     for ($i = 0; $i < 5 && $i < count($listjeux); $i++) {
@@ -9,4 +9,4 @@
     }
     ?>
 </ul>
-<button>Suivent</button>
+<button>Suivant</button>
