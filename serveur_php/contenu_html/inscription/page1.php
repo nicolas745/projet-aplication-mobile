@@ -11,4 +11,4 @@ foreach ($listSex as $data) {
 ?>
 <p>E-mail</p>
 <?php new input(input::email, "email", "email"); ?>
-<button class="suivent">Suivant</button>
+<button class="suivent" value='1'>Suivant</button>

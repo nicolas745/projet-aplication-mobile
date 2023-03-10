@@ -4,9 +4,9 @@
     <?php
     for ($i = 0; $i < 5 && $i < count($listjeux); $i++) {
         echo "<li actif='false'>";
-        echo "<img src='" . $listjeux[$i]['url'] . "'>";
+        echo "<input type=checkbox name='jeux' value='" . $listjeux[$i]['url'] . "'><img src='" . $listjeux[$i]['url'] . "'>";
         echo "</li>";
     }
     ?>
 </ul>
-<button>Suivant</button>
+<button class="suivent" value="3">Suivant</button>

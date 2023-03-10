@@ -12,12 +12,13 @@ class connection
             $listPlatforme = $sql_platforme->getList();
             $sql_jeux = new sql_jeux();
             $listjeux = $sql_jeux->getList();
+            new inscription();
             include("contenu_html/inscription/index.php");
             exit();
         }
         if ($this->ckeckinputs()) {
             $sql_conection = new sql_conection($this->pseudo, $this->password);
-            if ($sql_conection->iscompteOK()) {
+            if ($sql_conection->iscompteOK()->fetch()) {
                 $_SESSION['pseudo'] = $this->pseudo;
                 header("Location: " . $_SERVER['REQUEST_URI']);
                 exit;

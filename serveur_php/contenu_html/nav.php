@@ -6,7 +6,7 @@ $buttons = array(
     "config" => "media/settings.svg"
 );
 echo "<nav>";
-$button = "rechercher";
+$button = "rechecher";
 if (isset($_GET['Selectbutton'])) {
     $button =  $_GET['Selectbutton'];
 }

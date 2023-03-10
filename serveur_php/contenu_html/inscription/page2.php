@@ -4,10 +4,9 @@
     <?php
     for ($i = 0; $i < 5 && $i < count($listPlatforme); $i++) {
         echo "<li>";
-        echo "<input>";
-        echo "<p>" . $listPlatforme[$i]['nom'] . "</p>";
+        echo "<p><input type='checkbox' name='platforme[]' value=" . $listPlatforme[$i]['nom'] . ">" . $listPlatforme[$i]['nom'] . "</p>";
         echo "</li>";
     }
     ?>
 </ul>
-<button>Suivant</button>
+<button class="suivent" value='2'>Suivant</button>

@@ -152,6 +152,12 @@ button.select {
     width: 20px;
 }
 
+.valider {
+    background-color: transparent;
+    border: 3px solid white;
+    color: white;
+}
+
 svg {
     height: 61px;
     fill: white;
@@ -187,4 +193,8 @@ nav {
     height: max-content;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.suivent {
+    border: 3px solid white;
 }

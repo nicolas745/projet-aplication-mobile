@@ -28,6 +28,4 @@
     <h4>Modifications des conditions d'utilisation</h4>
     <p>Nous nous réservons le droit de modifier ces conditions d'utilisation à tout moment. Si nous apportons des modifications importantes, nous vous en informerons en affichant une notification sur notre site.</p>
 </article>
-<button>
-    valider
-</button>
+<input type="submit" name="submit" class="valider" id='valider'>
