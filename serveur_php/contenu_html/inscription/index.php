@@ -1,4 +1,4 @@
-<main>
+<main class="insc">
     <form method="post">
         <?php
         $dir = 'contenu_html/inscription'; // Mettez le chemin absolu de votre dossier ici

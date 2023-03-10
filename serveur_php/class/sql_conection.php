@@ -14,23 +14,15 @@ class sql_conection extends sql_user
      */
     public function iscompteOK()
     {
-        return $this->query("SELECT * FROM utilisateurs WHERE :a=:b OR :c=:d", array(
-            ":a" => array(
-                "value" => "pseudo",
-                "type" => PDO::PARAM_STR,
-            ),
-            ":b" => array(
+        return $this->query("SELECT * FROM utilisateurs WHERE pseudo=:user OR password=:pass", array(
+            ":user" => array(
                 "value" => $this->pseudo,
                 "type" => PDO::PARAM_STR,
             ),
-            ":c" => array(
-                "value" => "password",
-                "type" => PDO::PARAM_STR,
-            ),
-            ":d" => array(
+            ":pass" => array(
                 "value" => $this->password,
                 "type" => PDO::PARAM_STR,
             )
-        ));
+        ))->rowCount() != 0;
     }
 }

@@ -40,4 +40,13 @@ class sql_user extends sql
             )
         ))->rowCount() == 0;
     }
+    public function getOthers($my)
+    {
+        return $this->query("SELECT * FROM `utilisateurs` WHERE pseudo!=:pseudo LIMIT 10", array(
+            ":pseudo" => array(
+                "value" => $my,
+                "type" => PDO::PARAM_STR
+            )
+        ))->fetchAll();
+    }
 }

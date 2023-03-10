@@ -18,7 +18,7 @@ class connection
         }
         if ($this->ckeckinputs()) {
             $sql_conection = new sql_conection($this->pseudo, $this->password);
-            if ($sql_conection->iscompteOK()->fetch()) {
+            if ($sql_conection->iscompteOK()) {
                 $_SESSION['pseudo'] = $this->pseudo;
                 header("Location: " . $_SERVER['REQUEST_URI']);
                 exit;
