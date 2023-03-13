@@ -1,15 +1,14 @@
 <?php
 class myami extends profil_user
 {
-    public function __construct(int $id)
+    public function __construct($id)
     {
         parent::__construct($id);
-        if ($this->isMyid($id)) {
+        if ($this->isMyid($id) || !$this->isami($id)) {
             header("Location: ?");
-        } else if ($this->ismyami($id)) {
         }
     }
-    private function isMyid(int $id)
+    private function isMyid($id)
     {
         return $this->query("SELECT id FROM `utilisateurs` WHERE pseudo=:pseudo", array(
             ":pseudo" => array(
@@ -18,8 +17,7 @@ class myami extends profil_user
             )
         ))->fetch()['id'] == $id;
     }
-    private function ismyami(int $id)
+    private function ismyami($id)
     {
-        return false;
     }
 }
