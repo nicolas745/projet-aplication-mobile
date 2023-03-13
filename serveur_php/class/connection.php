@@ -20,6 +20,8 @@ class connection
             $sql_conection = new sql_conection($this->pseudo, $this->password);
             if ($sql_conection->iscompteOK()) {
                 $_SESSION['pseudo'] = $this->pseudo;
+                $_SESSION['id'] = $sql_conection->getid();
+                $_SESSION['email'] = $sql_conection->getmail();
                 header("Location: " . $_SERVER['REQUEST_URI']);
                 exit;
             }

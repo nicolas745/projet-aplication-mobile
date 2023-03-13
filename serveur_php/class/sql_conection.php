@@ -3,6 +3,8 @@ class sql_conection extends sql_user
 {
     public string $pseudo;
     public string $password;
+    public int $id;
+    public string $email;
     public function __construct(string $pseudo, string $password)
     {
         parent::__construct();
@@ -14,7 +16,7 @@ class sql_conection extends sql_user
      */
     public function iscompteOK()
     {
-        return $this->query("SELECT * FROM utilisateurs WHERE pseudo=:user OR password=:pass", array(
+        $query = $this->query("SELECT * FROM utilisateurs WHERE pseudo=:user OR password=:pass", array(
             ":user" => array(
                 "value" => $this->pseudo,
                 "type" => PDO::PARAM_STR,
@@ -23,6 +25,18 @@ class sql_conection extends sql_user
                 "value" => $this->password,
                 "type" => PDO::PARAM_STR,
             )
-        ))->rowCount() != 0;
+        ));
+        $data = $query->fetch();
+        $this->id = $data['id'];
+        $this->email = $data['e_mail'];
+        return $query->rowCount() != 0;
+    }
+    public function getid()
+    {
+        return $this->id;
+    }
+    public function getmail()
+    {
+        return $this->email;
     }
 }
