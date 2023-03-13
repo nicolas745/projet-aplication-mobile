@@ -5,6 +5,15 @@ class sql_user extends sql
     {
         parent::__construct();
     }
+    public function getDatauser($id)
+    {
+        return $this->query("SELECT * FROM utilisateurs INNER JOIN sex ON utilisateurs.id_sex=sex.id WHERE utilisateurs.id=:id", array(
+            ":id" => array(
+                "value" => $id,
+                "type" => PDO::PARAM_INT
+            )
+        ))->fetch();
+    }
     public function adduser(string $user, string $password, string $email, int $sex)
     {
         $password = sha1($password);

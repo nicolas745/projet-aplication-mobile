@@ -4,12 +4,7 @@ class profil_user extends sql_user
     public function __construct(int $id)
     {
         parent::__construct();
-        $data = $this->query("SELECT * FROM utilisateurs INNER JOIN sex ON utilisateurs.id_sex=sex.id WHERE utilisateurs.id=:id", array(
-            ":id" => array(
-                "value" => $id,
-                "type" => PDO::PARAM_INT
-            )
-        ))->fetch();
+        $data = $this->getDatauser($id);
         print_r($data);
         if (empty($data)) return;
         $this->navuser($data);
