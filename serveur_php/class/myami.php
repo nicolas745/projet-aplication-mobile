@@ -17,7 +17,4 @@ class myami extends profil_user
             )
         ))->fetch()['id'] == $id;
     }
-    private function ismyami($id)
-    {
-    }
 }
