@@ -16,19 +16,6 @@ class main
     }
     private function membre()
     {
-        $button = "rechecher";
-        if (isset($_GET['Selectbutton'])) {
-            $button =  $_GET['Selectbutton'];
-        }
-        echo "<main>";
-        switch ($button) {
-            case "rechecher":
-                include("contenu_html/rechecher.php");
-            case "dd":
-                break;
-            default:
-                break;
-        }
-        echo "</main>";
+        include("contenu_html/membre/index.php");
     }
 }

@@ -7,16 +7,16 @@ $buttons = array(
 );
 echo "<nav>";
 $button = "rechecher";
-if (isset($_GET['Selectbutton'])) {
-    $button =  $_GET['Selectbutton'];
+if (isset($_GET['Select'])) {
+    $button =  $_GET['Select'];
 }
 foreach ($buttons as $key => $data) {
     if ($key == $button) {
-        echo "<a class='svgYellow' href='?Selectbutton=$key'>";
+        echo "<a class='svgYellow' href='?Select=$key'>";
         include($buttons[$key]);
         echo "</a>";
     } else {
-        echo "<a href='?Selectbutton=$key'>";
+        echo "<a href='?Select=$key'>";
         include($buttons[$key]);
         echo "</a>";
     }

@@ -19,6 +19,14 @@ class inscription
                 }
             }
         } else {
+            if (!empty($_POST['pseudo']) && !empty($_POST['password']) && !empty($_POST['email']) && !empty($_POST['sexe'])) {
+                $_SESSION['inspseudo'] = $_POST['pseudo'];
+                $_SESSION['password'] = $_POST['password'];
+                $_SESSION['email'] = $_POST['email'];
+                $_SESSION['sexe'] = $_POST['sexe'];
+                header("Location: ?inscription&setup=1");
+                exit();
+            }
         }
     }
 }

@@ -6,7 +6,7 @@
     $others = $sql_user->getOthers($_SESSION['pseudo']);
     echo "<lu>";
     foreach ($others as $data) {
-        echo "<li><img><h3>" . $data['pseudo'] . "</h3><p>" . $data['description'] . "</p></li>";
+        echo "<li><a href='?Select=adduser&id=" . $data['id'] . "'><img><h3>" . $data['pseudo'] . "</h3><p>" . $data['description'] . "</p></a></li>";
     }
     echo "</lu>";
     ?>

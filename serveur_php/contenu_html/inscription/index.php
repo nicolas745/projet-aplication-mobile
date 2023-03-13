@@ -11,11 +11,17 @@
             }
             echo "</article>";
         }
-        foreach ($files as $file) {
+        if (empty($_GET['setup'])) {
+            $_GET['setup'] = 0;
+        }
+        foreach ($files as $key => $file) {
+            $style = '';
+            if ($_GET['setup'] + 3 !== $key) {
+                $style = 'style="display: none;"';
+            }
             if ($file !== '.' && $file !== '..' && $file !== 'index.php') {
-                echo '<section class="inscription">';
+                echo '<section class="inscription" ' . $style . '>';
                 include("$dir/$file");
-                buttons(count($files) - 3);
                 echo "</section>";
             }
         }
