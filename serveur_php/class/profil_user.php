@@ -9,8 +9,9 @@ class profil_user extends sql_user
         $this->navuser($data);
         $this->actionclick($data);
     }
-    public function isBlocked(int $blocker, int $who)
+    public function isBlocked(?int $blocker, ?int $who)
     {
+        if ($blocker == null || $who == null) return 0;
         $datablock = array(
             ":blocker" => array(
                 "value" => $blocker,
@@ -23,8 +24,9 @@ class profil_user extends sql_user
         );
         return $this->query("SELECT * FROM `blacklist` WHERE (id_blocker=:blocker AND id_who=:who)", $datablock)->fetchColumn() != 0;
     }
-    public function isattent(int $sender, int $receveur)
+    public function isattent(?int $sender, ?int $receveur)
     {
+        if ($sender == null || $receveur == null) return 0;
         $datami = array(
             ":sender" => array(
                 "value" => $sender,
@@ -37,8 +39,9 @@ class profil_user extends sql_user
         );
         return $this->query("SELECT * FROM `ami_attent` WHERE (id_receveur=:receveur AND id_send=:sender )", $datami)->fetchColumn();
     }
-    public function isami(int $id_ami1, int $id_ami2)
+    public function isami(?int $id_ami1, ?int $id_ami2)
     {
+        if ($id_ami1 == null || $id_ami2 == null) return;
         $datami = array(
             ":ami1" => array(
                 "value" => $id_ami1,

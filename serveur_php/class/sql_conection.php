@@ -27,6 +27,7 @@ class sql_conection extends sql_user
             )
         ));
         $data = $query->fetch();
+        if (empty($data)) return false;
         $this->id = $data['id'];
         $this->email = $data['e_mail'];
         return $query->rowCount() != 0;

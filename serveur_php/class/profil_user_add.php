@@ -33,6 +33,7 @@ class profil_user_add extends profil_user
                 "value" => $_SESSION['id'],
                 "type" => pdo::PARAM_INT
             )
+            header("Location:")
         ));
     }
 }
