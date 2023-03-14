@@ -5,32 +5,59 @@ class profil_user extends sql_user
     {
         parent::__construct();
         $data = $this->getDatauser($id);
-        print_r($data);
         if (empty($data)) return;
         $this->navuser($data);
         $this->actionclick($data);
     }
-    public function isami(int $id)
+    public function isBlocked(int $blocker, int $who)
     {
-        $datami = array(
-            ":ami1" => array(
-                "value" => $id,
+        $datablock = array(
+            ":blocker" => array(
+                "value" => $blocker,
                 "type" => pdo::PARAM_INT
             ),
-            ":ami2" => array(
-                "value" => $_SESSION['id'],
+            ":who" => array(
+                "value" => $who,
                 "type" => pdo::PARAM_INT
             )
         );
-        $is_ami1 = $this->query("SELECT id_ami1 FROM `listamie` WHERE (id_ami1=:ami1 AND id_ami2=:ami2 )", $datami)->fetch();
-        if (!empty($is_ami1)) {
-            return true;
-        }
-        $is_ami2 = $this->query("SELECT id_ami2 FROM `listamie` WHERE (id_ami2=:ami1 AND id_ami1=:ami2)   ", $datami)->fetch();
-        if (!empty($is_ami2)) {
-            return true;
-        }
-        return false;
+        return $this->query("SELECT * FROM `blacklist` WHERE (id_blocker=:blocker AND id_who=:who)", $datablock)->fetchColumn() != 0;
+    }
+    public function isattent(int $sender, int $receveur)
+    {
+        $datami = array(
+            ":sender" => array(
+                "value" => $sender,
+                "type" => pdo::PARAM_INT
+            ),
+            ":receveur" => array(
+                "value" => $receveur,
+                "type" => pdo::PARAM_INT
+            )
+        );
+        return $this->query("SELECT * FROM `ami_attent` WHERE (id_receveur=:receveur AND id_send=:sender )", $datami)->fetchColumn();
+    }
+    public function isami(int $id_ami1, int $id_ami2)
+    {
+        $datami = array(
+            ":ami1" => array(
+                "value" => $id_ami1,
+                "type" => pdo::PARAM_INT
+            ),
+            ":ami2" => array(
+                "value" => $id_ami2,
+                "type" => pdo::PARAM_INT
+            ),
+            ":ami1bi" => array(
+                "value" => $id_ami1,
+                "type" => pdo::PARAM_INT
+            ),
+            ":ami2bi" => array(
+                "value" => $id_ami2,
+                "type" => pdo::PARAM_INT
+            )
+        );
+        return $this->query("SELECT * FROM `listamie` WHERE (id_ami1=:ami1 AND id_ami2=:ami2 ) or (id_ami2=:ami1bi AND id_ami1=:ami2bi )", $datami)->fetchColumn();
     }
     public function navuser($data)
     {

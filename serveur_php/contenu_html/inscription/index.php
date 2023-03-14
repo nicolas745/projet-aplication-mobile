@@ -22,6 +22,7 @@
             if ($file !== '.' && $file !== '..' && $file !== 'index.php') {
                 echo '<section class="inscription" ' . $style . '>';
                 include("$dir/$file");
+                buttons(count($files) - 3);
                 echo "</section>";
             }
         }

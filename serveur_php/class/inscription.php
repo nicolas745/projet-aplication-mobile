@@ -12,8 +12,10 @@ class inscription
                 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
                     $sql_user = new sql_user();
                     if ($sql_user->notexists($user, $email)) {
-                        $sql_user->adduser($user, $password, $email, $sex);
+                        $data = $sql_user->adduser($user, $password, $email, $sex);
                         $_SESSION['pseudo'] = $user;
+                        $_SESSION['id'] = $data['id'];
+                        $_SESSION['email'] = $email;
                         header("Location: " . $_SERVER['REQUEST_URI']);
                     }
                 }

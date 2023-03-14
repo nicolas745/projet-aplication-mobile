@@ -17,7 +17,7 @@ class sql_user extends sql
     public function adduser(string $user, string $password, string $email, int $sex)
     {
         $password = sha1($password);
-        $this->query("INSERT INTO `utilisateurs`(`pseudo`, `e_mail`, `password`, `id_sex`) VALUES (:pseudo,:email,:passw,:sex)", array(
+        return $this->query("INSERT INTO `utilisateurs`(`pseudo`, `e_mail`, `password`, `id_sex`) VALUES (:pseudo,:email,:passw,:sex)", array(
             ":pseudo" => array(
                 "value" => $user,
                 "type" => PDO::PARAM_STR
@@ -34,7 +34,7 @@ class sql_user extends sql
                 "value" => $email,
                 "type" => PDO::PARAM_STR
             )
-        ));
+        ))->fetch();
     }
     public function notexists(String $user, string $email)
     {

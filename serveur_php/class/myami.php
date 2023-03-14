@@ -4,7 +4,7 @@ class myami extends profil_user
     public function __construct($id)
     {
         parent::__construct($id);
-        if ($this->isMyid($id) || !$this->isami($id)) {
+        if ($this->isMyid($id) || !$this->isami($id, $_SESSION['id'])) {
             header("Location: ?");
         }
     }
