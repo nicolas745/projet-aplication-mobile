@@ -10,15 +10,13 @@ class button
             "data" => $data
         );
         $postion = array_push(button::$list, $buton) - 1;
-        button::post($postion);
+        button::post();
         include("contenu_html/button.php");
     }
-    public static function post($postion)
+    public static function post()
     {
         if (isset($_POST['id_button'])) {
-            if ($postion == $_POST['id_button']) {
-                button::$list[$postion]['function'](button::$list[$postion]['data']);
-            }
+            button::$list[$_POST['id_button']]['function'](button::$list[$_POST['id_button']]['data']);
         }
     }
 }

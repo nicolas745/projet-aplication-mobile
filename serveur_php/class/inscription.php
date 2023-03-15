@@ -16,7 +16,6 @@ class inscription
                         $_SESSION['pseudo'] = $user;
                         $_SESSION['id'] = $data['id'];
                         $_SESSION['email'] = $email;
-                        print_r($data);
                         header("Location: " . $_SERVER['REQUEST_URI']);
                     }
                 }

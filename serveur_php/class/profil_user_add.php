@@ -23,17 +23,17 @@ class profil_user_add extends profil_user
     }
     public function actionadduser($donner)
     {
-        if ($this->isBlocked($_SESSION['id'], $donner['id']) || $this->isattent($_SESSION['id'], $donner['id'])) return;
-        $this->query("INSERT INTO `ami_attent`(`id_receveur`, `id_send`) VALUES (:receveur, :sender);            ", array(
-            ":receveur" => array(
-                'value' => $donner['id'],
-                'type' => pdo::PARAM_INT
-            ),
-            ":sender" => array(
-                "value" => $_SESSION['id'],
-                "type" => pdo::PARAM_INT
-            )
-            header("Location:")
-        ));
+        if (!$this->isBlocked($_SESSION['id'], $donner['id']) && !$this->isattent($_SESSION['id'], $donner['id'])) {
+            $this->query("INSERT INTO `ami_attent`(`id_receveur`, `id_send`) VALUES (:receveur, :sender)", array(
+                ":receveur" => array(
+                    'value' => $donner['id'],
+                    'type' => pdo::PARAM_INT
+                ),
+                ":sender" => array(
+                    "value" => $_SESSION['id'],
+                    "type" => pdo::PARAM_INT
+                )
+            ));
+        }
     }
 }
