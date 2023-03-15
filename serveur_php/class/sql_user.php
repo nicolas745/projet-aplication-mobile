@@ -7,7 +7,7 @@ class sql_user extends sql
     }
     public function getDatauser($id)
     {
-        return $this->query("SELECT utilisateurs.* FROM utilisateurs INNER JOIN sex ON utilisateurs.id_sex=sex.id WHERE utilisateurs.id=:id", array(
+        return $this->query("SELECT utilisateurs.*,sex.nom,sex.url FROM utilisateurs INNER JOIN sex ON utilisateurs.id_sex=sex.id WHERE utilisateurs.id=:id", array(
             ":id" => array(
                 "value" => $id,
                 "type" => PDO::PARAM_INT

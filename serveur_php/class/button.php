@@ -10,13 +10,17 @@ class button
             "data" => $data
         );
         $postion = array_push(button::$list, $buton) - 1;
-        button::post();
+        button::post($postion);
         include("contenu_html/button.php");
     }
-    public static function post()
+    public static function post($postion)
     {
         if (isset($_POST['id_button'])) {
-            button::$list[$_POST['id_button']]['function'](button::$list[$_POST['id_button']]['data']);
+            if (isset(button::$list[$_POST['id_button']])) {
+                if ($_POST['id_button'] == $postion) {
+                    button::$list[$_POST['id_button']]['function'](button::$list[$_POST['id_button']]['data']);
+                }
+            }
         }
     }
 }
