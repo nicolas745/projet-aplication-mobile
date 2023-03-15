@@ -1,5 +1,5 @@
 <?php
-class profil_user_add extends profil_user
+class sql_user_profil_add extends sql_user_profil
 {
     public function __construct(int $id)
     {

@@ -1,9 +1,21 @@
 <?php
 function my_autoloader($class)
 {
-    $filename = __DIR__ . "/class/" . str_replace('\\', '/', $class) . '.php';
-    if (file_exists($filename)) {
-        include $filename;
+    $classPath = str_replace('\\', '/', $class);
+    $classPathParts = explode('/', $classPath);
+    $fileName = array_pop($classPathParts) . '.php';
+
+    $directory = new RecursiveDirectoryIterator(__DIR__ . '/class');
+    $iterator = new RecursiveIteratorIterator($directory);
+    foreach ($iterator as $file) {
+        if ($file->isDir()) {
+            continue;
+        }
+        if (strtolower($file->getFilename()) === strtolower($fileName)) {
+            $classFile = $file->getPathname();
+            include $classFile;
+            return;
+        }
     }
 }
 session_start();

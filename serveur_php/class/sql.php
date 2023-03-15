@@ -23,7 +23,7 @@ class sql
     }
     public function query(string $query, array $datas)
     {
-        if (!$this->pdo) { // check if $pdo is initialized
+        if (!$this->pdo) {
             throw new Exception('PDO not initialized');
         }
         $presql = $this->pdo->prepare($query);

@@ -1,5 +1,5 @@
 <?php
-class List_messages extends sql_messsages
+class sql_messsages_list extends sql_messsages
 {
     private const maxdata = 5;
     public function __construct()

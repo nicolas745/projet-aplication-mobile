@@ -17,7 +17,7 @@ class connection
             exit();
         }
         if ($this->ckeckinputs()) {
-            $sql_conection = new sql_conection($this->pseudo, $this->password);
+            $sql_conection = new sql_user_conection($this->pseudo, $this->password);
             if ($sql_conection->iscompteOK()) {
                 $_SESSION['pseudo'] = $this->pseudo;
                 $_SESSION['id'] = $sql_conection->getid();
