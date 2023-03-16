@@ -1,9 +1,9 @@
 <?php
 $buttons = array(
-    "contact" => "media/contact.svg",
-    "messages" => "media/message.svg",
-    "rechecher" => "media/search.svg",
-    "config" => "media/settings.svg"
+    "contact" => icon::contact,
+    "messages" => icon::message,
+    "rechecher" => icon::search,
+    "config" => icon::settings
 );
 echo "<nav>";
 $button = "rechecher";

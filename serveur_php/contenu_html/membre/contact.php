@@ -6,7 +6,7 @@
     $button = new button();
     foreach ($list as $user) {
         echo "<li>";
-        $button->addbuton(button::email, function () {
+        $button->addbuton(button::message, function () {
         }, array());
         echo "<p>" . $user['pseudo'] . "</p>";
         echo "</li>";

@@ -1,7 +1,7 @@
 <main>
     <h1>nuntius game</h1>
     <?php
-    include("media/logo.svg")
+    include(icon::logo)
     ?>
     <form method="POST" action="">
         <p>pseudo</p>
