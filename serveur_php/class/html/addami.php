@@ -17,6 +17,7 @@ class addami extends sql_user_profil
         $button = new button();
         if (!$this->isattent($_SESSION['id'], $_GET['id'])) {
             $button->addbuton("plus-circle.svg", function ($donner) {
+                print_r($donner);
                 $this->actionadduser($donner);
             }, $data);
         }

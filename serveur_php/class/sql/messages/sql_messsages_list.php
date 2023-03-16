@@ -10,12 +10,8 @@ class sql_messsages_list extends sql_messsages
     {
         $res = array();
         $res['message'] = array();
-        $res['newamis'] = $this->query("SELECT * FROM `ami_attent` INNER JOIN utilisateurs ON ami_attent.id_receveur=utilisateurs.id  WHERE utilisateurs.id=:receveur", array(
-            ":receveur" => array(
-                "value" => $_SESSION['id'],
-                "type" => pdo::PARAM_INT
-            )
-        ))->fetchAll();
+        $sql_user_attent = new sql_user_attent();
+        $res['newamis'] = $sql_user_attent->getlistattent($_SESSION['id']);
         return $res;
     }
 }

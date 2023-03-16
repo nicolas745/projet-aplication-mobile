@@ -1,5 +1,5 @@
 <?php
-class myami extends profil_user
+class myami extends sql_user_profil
 {
     public function __construct($id)
     {
