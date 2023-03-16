@@ -6,7 +6,7 @@
     $sql_messages =  new sql_messsages_list();
     $data = $sql_messages->listnewmessage();
     $button = new button();
-    $sql_attent = new sql_attent();
+    $sql_user_attent = new sql_user_attent();
     foreach ($data['newamis'] as $donner) {
         echo "<li>";
         echo "<p>" . $donner['pseudo'] . " veut etre ton ami?</p>";

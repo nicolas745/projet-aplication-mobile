@@ -1,5 +1,5 @@
 <?php
-class sql_user_profil_add extends sql_user_profil
+class addami extends sql_user_profil
 {
     public function __construct(int $id)
     {
@@ -24,8 +24,8 @@ class sql_user_profil_add extends sql_user_profil
     public function actionadduser($donner)
     {
         if (!$this->isBlocked($_SESSION['id'], $donner['id']) && !$this->isattent($_SESSION['id'], $donner['id'])) {
-            $sql_attent = new sql_attent();
-            $sql_attent->send_invitation($_SESSION['id'], $donner['id']);
+            $sql_user_attent = new sql_user_attent();
+            $sql_user_attent->send_invitation($_SESSION['id'], $donner['id']);
             header('Location: ' . $_SERVER['PHP_SELF'] . '?' . $_SERVER['QUERY_STRING']);
             exit;
         }

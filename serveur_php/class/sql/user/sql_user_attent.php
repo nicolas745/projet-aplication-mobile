@@ -1,5 +1,5 @@
 <?php
-class sql_attent extends sql
+class sql_user_attent extends sql_user
 {
     public function __construct()
     {
