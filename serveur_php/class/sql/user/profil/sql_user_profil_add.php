@@ -24,16 +24,10 @@ class sql_user_profil_add extends sql_user_profil
     public function actionadduser($donner)
     {
         if (!$this->isBlocked($_SESSION['id'], $donner['id']) && !$this->isattent($_SESSION['id'], $donner['id'])) {
-            $this->query("INSERT INTO `ami_attent`(`id_receveur`, `id_send`) VALUES (:receveur, :sender)", array(
-                ":receveur" => array(
-                    'value' => $donner['id'],
-                    'type' => pdo::PARAM_INT
-                ),
-                ":sender" => array(
-                    "value" => $_SESSION['id'],
-                    "type" => pdo::PARAM_INT
-                )
-            ));
+            $sql_attent = new sql_attent();
+            $sql_attent->send_invitation($_SESSION['id'], $donner['id']);
+            header('Location: ' . $_SERVER['PHP_SELF'] . '?' . $_SERVER['QUERY_STRING']);
+            exit;
         }
     }
 }
