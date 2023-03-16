@@ -23,6 +23,24 @@ class sql_user_ami extends sql_user
             )
         ));
     }
+    public function listami(int $id)
+    {
+
+        return $this->query("SELECT utilisateurs.* FROM `listamie` INNER JOIN utilisateurs ON listamie.id_ami1=utilisateurs.id OR listamie.id_ami2=utilisateurs.id WHERE (listamie.id_ami1=:id or listamie.id_ami2=:id2) AND utilisateurs.id!=:id3;", array(
+            ":id" => array(
+                "value" => $id,
+                "type" => PDO::PARAM_INT
+            ),
+            ":id2" => array(
+                "value" => $id,
+                "type" => PDO::PARAM_INT
+            ),
+            ":id3" => array(
+                "value" => $id,
+                "type" => PDO::PARAM_INT
+            )
+        ))->fetchAll();
+    }
     public function isami(int $my, int $you)
     {
         $result = $this->query("SELECT * FROM `listamie` WHERE (`id_ami1` = :my1 AND `id_ami2` = :you1) OR (`id_ami1` = :you2 AND `id_ami2` = :my2)", array(

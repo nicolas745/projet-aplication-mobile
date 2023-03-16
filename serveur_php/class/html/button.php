@@ -1,5 +1,5 @@
 <?php
-class button
+class button extends icon
 {
     public static array $list = array();
     public static function addbuton(string $url_img, callable $action, array $data)

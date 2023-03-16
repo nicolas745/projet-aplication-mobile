@@ -1,10 +1,6 @@
 <?php
-class input
+class input extends icon
 {
-    public const user = "media/user-alt.svg";
-    public const eye_slash = "media/eye-slash.svg";
-    public const email = "media/email.svg";
-    public const search = "media/search.svg";
     /**
      * @param const $url_image je veut les input::const
      */
