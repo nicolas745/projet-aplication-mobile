@@ -8,7 +8,7 @@ class addami extends sql_user_profil
             header('Location: ?');
             return;
         }
-        if ($this->isami($id, $_SESSION['id'])) {
+        if ($this->isami($id, $_SESSION['id']) && $_GET['Select'] == "ami") {
             header('Location: ?Select=ami&id_ami=' . $id);
         }
     }
