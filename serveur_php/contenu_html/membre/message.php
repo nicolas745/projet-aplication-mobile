@@ -1,8 +1,8 @@
 <script>
     my = <?php echo $_SESSION['id']; ?>;
     key = "<?php
-            $chiffrement = new chiffrement();
-            echo $chiffrement->encrypt($_SESSION['id'], "16b0fa40cdd34bbf92ae41f7dda24681a7dc2665ea689a009dbd14343709ec00");
+            $chiffrement = new chiffrement("f7d6a14b9bbe67750ddae579a8ee0136071159e2f80da6e09ead3ecc3795405e");
+            echo $chiffrement->encrypt($_SESSION['id']);
             ?>";
 </script>
 <h2>lsl</h2>
