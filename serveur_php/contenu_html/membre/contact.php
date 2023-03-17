@@ -7,7 +7,7 @@
     foreach ($list as $user) {
         echo "<li>";
         $button->addbuton(button::message, function ($data) {
-            header("Location:?Select=messages&id=" . $data['id']);
+            header("Location:?Select=message&id=" . $data['id']);
             echo $data['id'];
         }, $user);
         echo "<p>" . $user['pseudo'] . "</p>";

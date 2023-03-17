@@ -3,7 +3,7 @@
 </h2>
 <lu>
     <?php
-    /*$sql_messages =  new sql_messsages_list();
+    $sql_messages =  new sql_messsages_list();
     $data = $sql_messages->listnewmessage();
     $button = new button();
     foreach ($data['newamis'] as $donner) {
@@ -19,6 +19,6 @@
             header('Location: ' . $_SERVER['PHP_SELF'] . '?' . $_SERVER['QUERY_STRING']);
         }, $donner);
         echo "</li>";
-    }*/
+    }
     ?>
 </lu>

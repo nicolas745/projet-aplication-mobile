@@ -9,4 +9,4 @@ echo "<p>password</p>";
 new input(input::eye_slash, "password", "password");
 echo "<a>Suprimer</a>";
 echo "<a href='?deconection'>deconection</a>";
-echo "</from>";
+echo "</form>";

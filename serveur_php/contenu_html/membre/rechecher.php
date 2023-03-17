@@ -1,13 +1,13 @@
 <h2>RECHERCHE</h2>
-<form>
+<form action="dd">
     <?php
     new input(input::search, 'search', 'searchuser');
     $sql_user = new sql_user();
     $others = $sql_user->getOthers($_SESSION['pseudo']);
-    echo "<lu>";
+    echo "<ul>";
     foreach ($others as $data) {
         echo "<li><a href='?Select=adduser&id=" . $data['id'] . "'><img><h3>" . $data['pseudo'] . "</h3><p>" . $data['description'] . "</p></a></li>";
     }
-    echo "</lu>";
+    echo "</ul>";
     ?>
 </form>
