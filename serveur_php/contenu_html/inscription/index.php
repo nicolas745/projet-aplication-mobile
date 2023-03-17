@@ -28,5 +28,4 @@
         }
         ?>
     </form>
-    <script src="js/inscription.js"></script>
 </main>

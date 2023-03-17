@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="structure/style.css">
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
 </head>
 
 <body>
