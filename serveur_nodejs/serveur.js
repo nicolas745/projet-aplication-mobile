@@ -9,30 +9,6 @@ const io = require('socket.io')(http, {
         credentials: true
     }
 });
-const crypto = require('crypto-browserify');
-
-class Chiffrement {
-    constructor(key) {
-        this.key = crypto.createHash('sha256').update(key).digest();
-    }
-
-    encrypt(data) {
-        const iv = crypto.randomBytes(16);
-        const cipher = crypto.createCipheriv('aes-256-cbc', this.key, iv);
-        const encrypted = Buffer.concat([cipher.update(data, 'utf8'), cipher.final()]);
-        const ciphertext = Buffer.concat([iv, encrypted]).toString('base64');
-        return ciphertext;
-    }
-
-    decrypt(ciphertext) {
-        const data = Buffer.from(ciphertext, 'base64');
-        const iv = data.slice(0, 16);
-        const encrypted = data.slice(16);
-        const decipher = crypto.createDecipheriv('aes-256-cbc', this.key, iv);
-        const decrypted = Buffer.concat([decipher.update(encrypted), decipher.final()]);
-        return decrypted.toString('utf8');
-    }
-}
 
 app.get('/status', (req, res) => {
     res.send({ message: 'Server is running' });
@@ -40,19 +16,12 @@ app.get('/status', (req, res) => {
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
-function fillKey(key) {
-    const keyBuffer = Buffer.from(key);
-    const result = Buffer.alloc(32);
-    keyBuffer.copy(result);
-    return result;
-}
-
-const filledKey = fillKey(key); // Clé de chiffrement remplie avec des octets nuls jusqu'à une longueur de 32 octets
 io.on('connection', (socket) => {
+    console.log("user est connectr")
     socket.on("message", (data) => {
-        console.log(data);
-        //res = chif.decrypt(data.key, fillKey(key));
-        //console.log(res);
+    });
+    socket.on("user", (key) => {
+        console.log(key);
     })
 });
 
