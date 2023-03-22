@@ -5,7 +5,7 @@ class sql
     private string $host = "127.0.0.1";
     private string $user = "root";
     private string $password = "";
-    private string $db = "nuntius game";
+    private string $db = "nuntius_game";
     private ?PDO $pdo;
     public function __construct()
     {

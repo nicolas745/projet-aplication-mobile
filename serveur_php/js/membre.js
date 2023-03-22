@@ -15,9 +15,7 @@ if (typeof io !== 'undefined') {
             text.append(document.getElementById("text").value);
             document.getElementById("convers").append(text);
             socket.emit("message", {
-                "key": key,
                 "id_ami": parseInt(params.get('id')),
-                "id_my": my,
                 "message": document.getElementById("text").value
             });
         }

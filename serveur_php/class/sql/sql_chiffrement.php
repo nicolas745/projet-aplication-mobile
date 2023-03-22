@@ -12,7 +12,7 @@ class sql_Chiffrement extends sql
     public function encrypt($data)
     {
         $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length('aes-256-gcm'));
-        $tag = null;
+        $tag = "key";
         $encrypted = openssl_encrypt($data, 'aes-256-gcm', $this->key, 0, $iv, $tag);
         $this->crypt = base64_encode($encrypted) . '::' . base64_encode($iv) . '::' . base64_encode($tag);
         return $this->crypt;
